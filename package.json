@@ -1,0 +1,22 @@
+{
+  "name": "pusaka-sunda",
+  "version": "1.0.0",
+  "description": "Registry & ensiklopedia cagar budaya dan cagar alam tanah Sunda — Tugas Besar Pengembangan Web, Kelompok 8.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": ["cagar-budaya", "cagar-alam", "sunda", "leaflet", "express", "crud"],
+  "author": "Kelompok 8 - Bisnis Digital 2024",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "optionalDependencies": {
+    "better-sqlite3": "^11.3.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

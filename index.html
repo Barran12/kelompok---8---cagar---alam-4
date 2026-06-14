@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pusaka Sunda — Dosir Cagar Budaya &amp; Cagar Alam</title>
+  <meta name="description" content="Dosir pelestarian cagar budaya dan cagar alam bersejarah di tanah Sunda, Jawa Barat." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header">
+    <div class="wrap nav">
+      <a href="#beranda" class="brand">
+        <span class="mark">PS</span>
+        <span class="bt">
+          <b>Pusaka Sunda</b>
+          <small>Dosir Pelestarian · Jabar</small>
+        </span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="#katalog">Katalog</a>
+        <a href="#peta">Peta</a>
+        <a href="#ajukan" class="nav-cta">Ajukan Situs</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Buka menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ============ HERO / TITLEBLOCK ============ -->
+  <section class="hero" id="beranda">
+    <div class="wrap" style="padding:0">
+      <div class="hero-sheet">
+        <div class="hero-main reveal">
+          <div class="hero-eyebrow">
+            <span class="seq">DOK · 2026</span>
+            <span class="label">Inventaris Cagar — Jawa Barat</span>
+          </div>
+          <h1>Merekam jejak <span class="alt">pusaka</span> tanah Sunda.</h1>
+          <p class="lead">Dosir terbuka untuk cagar budaya dan cagar alam Jawa Barat — dari Art Deco Bandung dan keraton pesisir hingga punden berundak purba. Tiap situs tercatat lengkap dengan koordinat, era, dan status verifikasinya.</p>
+          <div class="titleblock">
+            <div class="tb-cell"><span class="label">Situs Terdaftar</span><span class="v tnum" id="statTotal">0</span></div>
+            <div class="tb-cell"><span class="label">Cagar Budaya</span><span class="v tnum" id="statBudaya">0</span></div>
+            <div class="tb-cell"><span class="label">Cagar Alam</span><span class="v tnum" id="statAlam">0</span></div>
+            <div class="tb-cell"><span class="label">Wilayah</span><span class="v sm">Jawa Barat</span></div>
+          </div>
+        </div>
+        <figure class="hero-plate reveal" style="margin:0">
+          <div class="plate-mount">
+            <span class="tick tl"></span><span class="tick br"></span>
+            <div class="frame">
+              <img src="https://images.unsplash.com/photo-1596402184320-417e7178b2cd?w=900&q=70&auto=format&fit=crop" alt="Arsitektur gedung bersejarah di Bandung" />
+            </div>
+          </div>
+          <figcaption class="plate-cap">
+            <b>Gedung Sate</b>
+            <span class="co">CB-32-001 · 6.9025°S 107.6189°E</span>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <main>
+  <!-- ============ KATALOG ============ -->
+  <section class="section" id="katalog">
+    <div class="wrap">
+      <div class="sheet-head">
+        <span class="seq">Lembar 01</span>
+        <h2>Katalog Situs</h2>
+        <p>Tiap entri tercatat sebagai lembar spesimen: kode registry, koordinat, era pembangunan, dan status verifikasi.</p>
+      </div>
+
+      <div class="toolbar">
+        <div class="search">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg>
+          <input type="search" id="searchInput" placeholder="cari nama / kota / era…" aria-label="Cari situs" />
+        </div>
+        <div class="chips" id="filterChips" role="group" aria-label="Saring kategori">
+          <button class="chip" data-filter="semua" aria-pressed="true">Semua</button>
+          <button class="chip" data-filter="cagar-budaya" aria-pressed="false">Cagar Budaya</button>
+          <button class="chip" data-filter="cagar-alam" aria-pressed="false">Cagar Alam</button>
+        </div>
+      </div>
+
+      <div class="catalog" id="catalog" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <!-- ============ PETA ============ -->
+  <section class="section map-section" id="peta">
+    <div class="wrap">
+      <div class="sheet-head">
+        <span class="seq">Lembar 02</span>
+        <h2>Peta Sebaran</h2>
+        <p>Posisi tiap situs diplot di atas Jawa Barat. Klik penanda untuk ringkasan, atau tekan “Peta” pada lembar katalog.</p>
+      </div>
+      <div id="map"></div>
+      <div class="map-legend">
+        <span><i style="background:#93662B"></i>Cagar Budaya</span>
+        <span><i style="background:#4C5E3A"></i>Cagar Alam</span>
+        <span><i style="background:#213A52"></i>Usulan masyarakat</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FORM ============ -->
+  <section class="section form-section" id="ajukan">
+    <div class="wrap">
+      <div class="sheet-head">
+        <span class="seq">Lembar 03</span>
+        <h2>Ajukan Situs</h2>
+        <p>Usulkan cagar budaya atau cagar alam yang belum terdaftar. Usulan masuk ke dosir berstatus menunggu verifikasi.</p>
+      </div>
+
+      <form class="form-card" id="siteForm" novalidate>
+        <div class="form-cap">
+          <b id="formTitle">Formulir Usulan Situs</b>
+          <span class="label">Borang · F-08</span>
+        </div>
+        <input type="hidden" id="editKode" />
+        <div class="form-grid">
+          <div class="field col-2">
+            <label for="nama">Nama situs <span class="req">*</span></label>
+            <input type="text" id="nama" name="nama" autocomplete="off" />
+            <small class="err" data-for="nama"></small>
+          </div>
+
+          <div class="field">
+            <label for="kategori">Kategori <span class="req">*</span></label>
+            <select id="kategori" name="kategori">
+              <option value="">— pilih —</option>
+              <option value="cagar-budaya">Cagar Budaya</option>
+              <option value="cagar-alam">Cagar Alam</option>
+            </select>
+            <small class="err" data-for="kategori"></small>
+          </div>
+
+          <div class="field">
+            <label for="era">Era / Tahun <span class="req">*</span></label>
+            <input type="text" id="era" name="era" placeholder="mis. 1920 (Hindia Belanda)" autocomplete="off" />
+            <small class="err" data-for="era"></small>
+          </div>
+
+          <div class="field">
+            <label for="lokasi">Kota / Kabupaten <span class="req">*</span></label>
+            <input type="text" id="lokasi" name="lokasi" autocomplete="off" />
+            <small class="err" data-for="lokasi"></small>
+          </div>
+
+          <div class="field">
+            <label for="arsitek">Arsitek / Asal-usul</label>
+            <input type="text" id="arsitek" name="arsitek" placeholder="opsional" autocomplete="off" />
+            <small class="err" data-for="arsitek"></small>
+          </div>
+
+          <div class="field">
+            <label for="lat">Lintang (lat) <span class="req">*</span></label>
+            <input type="text" id="lat" name="lat" inputmode="decimal" placeholder="-6.9025" />
+            <small class="err" data-for="lat"></small>
+          </div>
+
+          <div class="field">
+            <label for="lng">Bujur (lng) <span class="req">*</span></label>
+            <input type="text" id="lng" name="lng" inputmode="decimal" placeholder="107.6189" />
+            <small class="err" data-for="lng"></small>
+          </div>
+
+          <div class="field col-2">
+            <label for="foto">URL Foto</label>
+            <input type="url" id="foto" name="foto" placeholder="https://… (opsional)" autocomplete="off" />
+            <small class="err" data-for="foto"></small>
+          </div>
+
+          <div class="field col-2">
+            <label for="deskripsi">Deskripsi <span class="req">*</span></label>
+            <textarea id="deskripsi" name="deskripsi" placeholder="Nilai sejarah / ekologis situs (min. 20 karakter)…"></textarea>
+            <small class="err" data-for="deskripsi"></small>
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary" id="submitBtn">Kirim Usulan</button>
+          <button type="reset" class="btn btn-ghost" id="resetBtn">Bersihkan</button>
+          <span class="form-note">* wajib diisi</span>
+        </div>
+      </form>
+    </div>
+  </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="foot-grid">
+        <div class="col">
+          <span class="label">Tentang</span>
+          <b>Pusaka Sunda</b>
+          <p>Dosir terbuka cagar budaya &amp; cagar alam Jawa Barat. Purwarupa (MVP) edukatif untuk pelestarian warisan tanah Sunda.</p>
+        </div>
+        <div class="col">
+          <span class="label">Topik 8 · Tugas Besar</span>
+          <b>Arsitektur &amp; Cagar Alam Sunda</b>
+          <p>Pengembangan Web · Kelas Bisnis Digital 2024. Pendekatan MVP dalam sprint 2 minggu.</p>
+        </div>
+        <div class="col">
+          <span class="label">Kelompok 8</span>
+          <b>Semester Genap 2025–2026</b>
+          <p>Dosen: Asep Maulana, PhD · Fakultas Ekonomi &amp; Bisnis, Universitas Padjadjaran.</p>
+        </div>
+      </div>
+      <div class="foot-meta">
+        <span>© 2026 PUSAKA SUNDA · data purwarupa</span>
+        <span>HTML5 · CSS GRID/FLEXBOX · VANILLA JS · LEAFLET · NODE.JS</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- modal -->
+  <div class="modal-backdrop" id="modal">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalName">
+      <button class="modal-close" id="modalClose" aria-label="Tutup">×</button>
+      <div class="modal-photo"><img id="modalImg" src="" alt="" /></div>
+      <div class="modal-inner">
+        <p class="label" id="modalKode"></p>
+        <h3 id="modalName"></h3>
+        <p class="m-meta" id="modalMeta"></p>
+        <p id="modalDesc"></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="toasts" id="toasts" aria-live="polite"></div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
