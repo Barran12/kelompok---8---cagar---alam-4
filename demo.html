@@ -224,6 +224,8 @@ h1,h2,h3{ font-family:var(--ff-disp); font-weight:600; line-height:1.04; margin:
 .act:hover{ background:var(--ink); color:var(--paper); }
 .act.go{ flex:1.4; color:var(--indigo); }
 .act.go:hover{ background:var(--indigo); color:var(--paper); }
+.act.verify{ color:var(--moss); }
+.act.verify:hover{ background:var(--moss); color:var(--paper); }
 .act.danger:hover{ background:var(--ochre); color:var(--paper); }
 
 .st{ position:absolute; top:72px; left:28px; z-index:2;
@@ -954,6 +956,8 @@ h1,h2,h3{ font-family:var(--ff-disp); font-weight:600; line-height:1.04; margin:
     var st = s.status === "usulan"
       ? '<span class="st usulan">Usulan</span>'
       : '<span class="st ok">Terverifikasi</span>';
+    var verifyBtn = s.status === "usulan"
+      ? '<button class="act verify" data-act="verify">Verifikasi</button>' : "";
     return (
       '<article class="card" data-kode="' + esc(s.kode) + '">' +
         '<div class="card-head"><span class="kode">' + esc(s.kode) + '</span>' +
@@ -970,6 +974,7 @@ h1,h2,h3{ font-family:var(--ff-disp); font-weight:600; line-height:1.04; margin:
         '<div class="card-foot">' +
           '<button class="act go" data-act="map">Peta</button>' +
           '<button class="act" data-act="view">Detail</button>' +
+          verifyBtn +
           '<button class="act" data-act="edit">Ubah</button>' +
           '<button class="act danger" data-act="delete">Hapus</button>' +
         '</div>' +
@@ -1210,7 +1215,11 @@ h1,h2,h3{ font-family:var(--ff-disp); font-weight:600; line-height:1.04; margin:
       var act = btn.getAttribute("data-act");
       if (act === "map") focusOnMap(kode);
       else if (act === "view") openModal(kode);
-      else if (act === "edit") {
+      else if (act === "verify") {
+        updateSite(kode, { status: "terverifikasi" });
+        renderAll();
+        toast(kode + " kini berstatus Terverifikasi.", "ok");
+      } else if (act === "edit") {
         var s = state.sites.find(function (x) { return x.kode === kode; });
         fillForm(s);
         document.getElementById("ajukan").scrollIntoView({ behavior: "smooth" });

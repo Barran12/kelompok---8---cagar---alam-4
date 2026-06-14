@@ -210,6 +210,8 @@ h1,h2,h3{ font-family:var(--ff-disp); font-weight:600; line-height:1.04; margin:
 .act:hover{ background:var(--ink); color:var(--paper); }
 .act.go{ flex:1.4; color:var(--indigo); }
 .act.go:hover{ background:var(--indigo); color:var(--paper); }
+.act.verify{ color:var(--moss); }
+.act.verify:hover{ background:var(--moss); color:var(--paper); }
 .act.danger:hover{ background:var(--ochre); color:var(--paper); }
 
 .st{ position:absolute; top:72px; left:28px; z-index:2;

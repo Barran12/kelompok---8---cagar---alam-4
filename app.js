@@ -248,6 +248,8 @@
     var st = s.status === "usulan"
       ? '<span class="st usulan">Usulan</span>'
       : '<span class="st ok">Terverifikasi</span>';
+    var verifyBtn = s.status === "usulan"
+      ? '<button class="act verify" data-act="verify">Verifikasi</button>' : "";
     return (
       '<article class="card" data-kode="' + esc(s.kode) + '">' +
         '<div class="card-head"><span class="kode">' + esc(s.kode) + '</span>' +
@@ -264,6 +266,7 @@
         '<div class="card-foot">' +
           '<button class="act go" data-act="map">Peta</button>' +
           '<button class="act" data-act="view">Detail</button>' +
+          verifyBtn +
           '<button class="act" data-act="edit">Ubah</button>' +
           '<button class="act danger" data-act="delete">Hapus</button>' +
         '</div>' +
@@ -504,7 +507,11 @@
       var act = btn.getAttribute("data-act");
       if (act === "map") focusOnMap(kode);
       else if (act === "view") openModal(kode);
-      else if (act === "edit") {
+      else if (act === "verify") {
+        updateSite(kode, { status: "terverifikasi" });
+        renderAll();
+        toast(kode + " kini berstatus Terverifikasi.", "ok");
+      } else if (act === "edit") {
         var s = state.sites.find(function (x) { return x.kode === kode; });
         fillForm(s);
         document.getElementById("ajukan").scrollIntoView({ behavior: "smooth" });
