@@ -23,7 +23,7 @@
     "arsitek": "J. Gerber",
     "deskripsi": "Bekas Gouvernements Bedrijven, kini Kantor Gubernur Jawa Barat. Memadukan langgam Indo-Eropa dengan ornamen Nusantara; puncak menaranya dihiasi enam tusuk sate yang menjadi ikon kota Bandung.",
     "status": "terverifikasi",
-    "foto": "https://images.unsplash.com/photo-1596402184320-417e7178b2cd?w=900&q=70&auto=format&fit=crop"
+    "foto": "https://commons.wikimedia.org/wiki/Special:FilePath/Gedung_Sate_-_panoramio.jpg?width=900"
   },
   {
     "kode": "CB-32-002",
@@ -36,7 +36,7 @@
     "arsitek": "C.P. Wolff Schoemaker",
     "deskripsi": "Mahakarya Art Deco tropis yang kini menjadi Bumi Siliwangi UPI. Garis-garis streamline melengkung mengikuti kontur bukit, sebuah dialog antara modernitas dan lanskap Bandung Utara.",
     "status": "terverifikasi",
-    "foto": "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=900&q=70&auto=format&fit=crop"
+    "foto": "https://commons.wikimedia.org/wiki/Special:FilePath/COLLECTIE_TROPENMUSEUM_Villa_Isola_aan_de_Lembangweg_bij_Bandoeng_TMnr_60026636.jpg?width=900"
   },
   {
     "kode": "CB-32-003",
@@ -44,12 +44,12 @@
     "kategori": "cagar-budaya",
     "era": "1529 (Kesultanan)",
     "lokasi": "Cirebon",
-    "lat": -6.721167,
-    "lng": 108.571028,
+    "lat": -6.72629,
+    "lng": 108.570917,
     "arsitek": "Pangeran Cakrabuana",
     "deskripsi": "Keraton tertua di Cirebon, perpaduan langgam Sunda, Jawa, Islam, Tiongkok, dan Eropa. Menyimpan Kereta Singa Barong serta tembok bata merah khas pesisir utara.",
     "status": "terverifikasi",
-    "foto": "https://images.unsplash.com/photo-1609921141835-710b7fa6e438?w=900&q=70&auto=format&fit=crop"
+    "foto": "https://commons.wikimedia.org/wiki/Special:FilePath/Cirebon_Keraton_Kasepuhan.jpg?width=900"
   },
   {
     "kode": "CB-32-004",
@@ -57,12 +57,12 @@
     "kategori": "cagar-budaya",
     "era": "Abad ke-8 (Hindu)",
     "lokasi": "Leles, Garut",
-    "lat": -7.094389,
-    "lng": 107.918583,
+    "lat": -7.103075,
+    "lng": 107.919039,
     "arsitek": "Tidak diketahui",
     "deskripsi": "Satu-satunya candi Hindu utuh di Tatar Sunda, berdiri di tengah danau yang dikelilingi Kampung Pulo. Diapit oleh makam Embah Dalem Arief Muhammad sebagai simbol akulturasi.",
     "status": "terverifikasi",
-    "foto": "https://images.unsplash.com/photo-1604999333679-b86d54738315?w=900&q=70&auto=format&fit=crop"
+    "foto": "https://commons.wikimedia.org/wiki/Special:FilePath/Cangkuang_3.jpg?width=900"
   },
   {
     "kode": "CA-32-051",
@@ -70,12 +70,12 @@
     "kategori": "cagar-alam",
     "era": "Prasejarah",
     "lokasi": "Cianjur",
-    "lat": -6.994722,
-    "lng": 107.055833,
+    "lat": -6.99389,
+    "lng": 107.05639,
     "arsitek": "Peradaban megalitik",
     "deskripsi": "Punden berundak terbesar di Asia Tenggara, tersusun dari ribuan balok batu kolom andesit. Lanskap budaya purba yang masih menyimpan misteri lapisan usianya.",
     "status": "terverifikasi",
-    "foto": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=900&q=70&auto=format&fit=crop"
+    "foto": "https://commons.wikimedia.org/wiki/Special:FilePath/Situs_Megalithikum_Gunung_Padang.jpg?width=900"
   },
   {
     "kode": "CA-32-052",
@@ -88,7 +88,7 @@
     "arsitek": "Proses geologis",
     "deskripsi": "Gunung api strato dengan kawah perahu terbalik yang melegenda lewat kisah Sangkuriang. Kawah Ratu memamerkan dinding belerang dan kepulan uap sulfatara.",
     "status": "terverifikasi",
-    "foto": "https://images.unsplash.com/photo-1605640840605-14ac1855827b?w=900&q=70&auto=format&fit=crop"
+    "foto": "https://commons.wikimedia.org/wiki/Special:FilePath/Gunung_Tangkuban_Parahu.jpg?width=900"
   },
   {
     "kode": "CA-32-053",
@@ -101,7 +101,7 @@
     "arsitek": "Proses geologis",
     "deskripsi": "Danau kawah Gunung Patuha berwarna toska keputihan akibat kandungan belerang tinggi. Salah satu lanskap alam paling ikonik di selatan Bandung.",
     "status": "terverifikasi",
-    "foto": "https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=900&q=70&auto=format&fit=crop"
+    "foto": "https://commons.wikimedia.org/wiki/Special:FilePath/Kawah_Putih_Ciwidey.jpg?width=900"
   },
   {
     "kode": "CA-32-054",
@@ -114,7 +114,7 @@
     "arsitek": "Masyarakat adat Sunda",
     "deskripsi": "Permukiman adat dengan rumah panggung beratap ijuk yang menjaga aturan leluhur. Lanskap budaya hidup yang memperlihatkan harmoni manusia Sunda dengan alam.",
     "status": "terverifikasi",
-    "foto": "https://images.unsplash.com/photo-1518998053901-5348d3961a04?w=900&q=70&auto=format&fit=crop"
+    "foto": "https://commons.wikimedia.org/wiki/Special:FilePath/Rumah_adat_Kampung_Naga,_Tasikmalaya.jpg?width=900"
   }
 ];
   var SEED = window.__SEED__ || DEFAULT_SEED;
